@@ -45,7 +45,7 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="{{ URL::route('home') }}">{{trans('pages.name')}}</a>
+
 	        </div>
 	        <div class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
@@ -60,6 +60,7 @@
 				<li><a href="{{ URL::to('logout') }}">{{trans('pages.logout')}}</a></li>
 				@else
 				<li {{ (Request::is('login') ? 'class="active"' : '') }}><a href="{{ URL::to('login') }}">{{trans('pages.login')}}</a></li>
+					  <li {{ (Request::is('login') ? 'class="active"' : '') }}><a href="{{ URL::to('register') }}">{{trans('pages.register')}}</a></li>
 				
 				@endif
 	          </ul>

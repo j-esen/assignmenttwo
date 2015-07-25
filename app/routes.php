@@ -47,9 +47,34 @@ Route::resource('groups', 'GroupController');
 
 Route::get('/', array('as' => 'home', function()
 {
-	return View::make('home');
+	return View::make('sessions.login');
 }));
 
+
+Route::get('/index', array(
+	'before' => 'auth',
+	'as' => 'index',
+	function()
+	{
+		return View::make('users.index');
+	}
+));
+
+Route::group(array('before'=>'auth'), function() {
+Route::resource('notes', 'NotesController');
+});
+
+Route::group(array('before'=>'auth'), function() {
+Route::resource('images', 'ImagesController');
+});
+
+Route::group(array('before'=>'auth'), function() {
+Route::resource('websites', 'WebsitesController');
+});
+
+Route::group(array('before'=>'auth'), function() {
+Route::resource('tbds', 'TbdsController');
+});
 
 // App::missing(function($exception)
 // {

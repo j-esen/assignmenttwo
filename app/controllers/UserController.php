@@ -80,29 +80,32 @@ class UserController extends BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
-		// Form Processing
-        $result = $this->registerForm->save( Input::all() );
+    {
+        $rules = array('g-recaptcha-response' => 'required|captcha');
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->passes()) {
+            // Form Processing
+            $result = $this->registerForm->save(Input::all());
 
-        if( $result['success'] )
-        {
-            Event::fire('user.signup', array(
-            	'email' => $result['mailData']['email'], 
-            	'userId' => $result['mailData']['userId'], 
-                'activationCode' => $result['mailData']['activationCode']
-            ));
+            if ($result['success']) {
+                Event::fire('user.signup', array(
+                    'email' => $result['mailData']['email'],
+                    'userId' => $result['mailData']['userId'],
+                    'activationCode' => $result['mailData']['activationCode']
+                ));
 
-            // Success!
-            Session::flash('success', $result['message']);
-            return Redirect::route('home');
+                // Success!
+                Session::flash('success', $result['message']);
+                return Redirect::route('home');
 
-        } else {
-            Session::flash('error', $result['message']);
-            return Redirect::action('UserController@create')
-                ->withInput()
-                ->withErrors( $this->registerForm->errors() );
+            } else {
+                Session::flash('error', $result['message']);
+                return Redirect::action('UserController@create')
+                    ->withInput()
+                    ->withErrors($this->registerForm->errors());
+            }
         }
-	}
+    }
 
 	/**
 	 * Display the specified resource.

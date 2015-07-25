@@ -1,7 +1,9 @@
 {
 	"require": {
 		"laravel/framework": "4.2.*",
-		"cartalyst/sentry": "2.1.*"
+		"cartalyst/sentry": "2.1.*",
+	  "anhskohbo/no-captcha": "1.*",
+	  "intervention/image":"1.*"
 	},
 	"require-dev": {
 		"way/generators": "~2.6",

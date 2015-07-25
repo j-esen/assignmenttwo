@@ -27,7 +27,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
+	'host' => 'smtp.gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -53,7 +53,8 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'esenjessica@gmail.com', 'name' => 'Jessica Clements - Assignment 2'),
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -79,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'esenjessica@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -92,7 +93,8 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'Ivyember',
+
 
 	/*
 	|--------------------------------------------------------------------------

@@ -54,10 +54,11 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'l4sentry',
-			'username'  => 'dbuser',
-			'password'  => 'dbpassword',
+			'host'      => '127.0.0.1',
+			'database'  => 'take2',
+			'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+			'username'  => 'root',
+			'password'  => 'root',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
