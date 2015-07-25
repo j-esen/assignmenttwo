@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'jesentwo',
 			'username'  => 'root',
-			'password'  => 'root',
+			'password'  => '315e34e9cc82d0e2',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
