@@ -54,9 +54,8 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1',
-			'database'  => 'take2',
-			'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+			'host'      => 'localhost',
+			'database'  => 'jesentwo',
 			'username'  => 'root',
 			'password'  => 'root',
 			'charset'   => 'utf8',
